@@ -1,0 +1,1518 @@
+/* --- Ko'p tillilik tugmalari uchun --- */
+.lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: 24px;
+}
+.lang-btn {
+    background: #23243a;
+    color: #ffb84b;
+    border: 1px solid #ffb84b;
+    border-radius: 4px;
+    padding: 3px 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border 0.2s;
+    outline: none;
+}
+.lang-btn:hover, .lang-btn.active {
+    background: #ffb84b;
+    color: #23243a;
+    border: 1px solid #ffb84b;
+}
+@media (max-width: 600px) {
+    .lang-switcher {
+        margin-left: 8px;
+        gap: 2px;
+    }
+    .lang-btn {
+        padding: 2px 7px;
+        font-size: 0.95rem;
+    }
+}
+/* Ijtimoiy tarmoqlarni footerda o'rtaga joylashtirish */
+.center-social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px auto;
+}
+.center-social .footer-social {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 6px;
+}
+/* Tartibli, ustunli va ro'yxatli footer uchun qo'shimcha uslublar */
+.footer-uz-wrap.sorted {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 32px;
+    padding-bottom: 0;
+}
+.footer-uz-col {
+    flex: 1 1 220px;
+    min-width: 200px;
+    margin-bottom: 18px;
+}
+.footer-uz-col h4 {
+    color: #ffb84b;
+    margin-bottom: 8px;
+    font-size: 1.08rem;
+}
+.footer-uz-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 10px 0;
+}
+.footer-uz-list li {
+    margin-bottom: 5px;
+}
+.footer-uz-list a {
+    color: #ffb84b;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.footer-uz-list a:hover {
+    color: #ff4b4b;
+}
+.footer-uz-socials.sorted {
+    width: 100%;
+    text-align: center;
+    margin: 0 0 0 0;
+    padding: 10px 0 0 0;
+    border-top: 1px solid #23243a;
+    font-size: 1.08rem;
+}
+.footer-uz-socials.sorted span {
+    color: #ffb84b;
+    margin-right: 10px;
+    font-weight: 500;
+}
+.footer-uz-socials.sorted .footer-uz-social {
+    margin: 0 5px;
+    vertical-align: middle;
+}
+.footer-uz-col .footer-uz-slogan {
+    display: block;
+    margin-top: 10px;
+    color: #ffb84b;
+    font-style: italic;
+    font-size: 1rem;
+}
+@media (max-width: 900px) {
+    .footer-uz-wrap.sorted {
+        flex-direction: column;
+        gap: 0;
+        padding: 30px 10px 0 10px;
+    }
+    .footer-uz-col {
+        margin-bottom: 12px;
+    }
+    .footer-uz-socials.sorted {
+        padding: 10px 0 0 0;
+    }
+}
+/* Anime Uz original footer styles */
+.anime-footer-uz {
+    background: linear-gradient(120deg, #23243a 0%, #1a1b24 100%);
+    color: #f5f6fa;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin-top: 40px;
+    border-top: 4px solid #ff4b4b;
+}
+.footer-uz-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px 10px 20px;
+}
+.footer-uz-logo-block {
+    flex: 1 1 260px;
+    margin-bottom: 25px;
+}
+.footer-uz-logo {
+    font-size: 2.1rem;
+    font-weight: bold;
+    color: #ff4b4b;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.footer-uz-logo span {
+    color: #fff;
+    font-size: 1.5rem;
+}
+.footer-uz-desc {
+    font-size: 1.05rem;
+    color: #b2b6c8;
+}
+.footer-uz-slogan {
+    color: #ffb84b;
+    font-style: italic;
+    font-size: 1rem;
+}
+.footer-uz-links {
+    flex: 2 1 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 25px;
+}
+.footer-uz-links h4 {
+    color: #ffb84b;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+.footer-uz-links a {
+    color: #ffb84b;
+    text-decoration: none;
+    margin-right: 7px;
+    transition: color 0.2s;
+}
+.footer-uz-links a:hover {
+    color: #ff4b4b;
+}
+.footer-uz-socials {
+    flex: 1 1 180px;
+    margin-bottom: 25px;
+}
+.footer-uz-socials h4 {
+    color: #ffb84b;
+    margin-bottom: 7px;
+    font-size: 1.1rem;
+}
+.footer-uz-social {
+    display: inline-block;
+    background: #ff4b4b;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    text-align: center;
+    line-height: 36px;
+    margin-right: 8px;
+    font-size: 1.1rem;
+    transition: background 0.2s, color 0.2s;
+    box-shadow: 0 2px 8px #0002;
+}
+.footer-uz-social.tg { background: #229ed9; }
+.footer-uz-social.ig { background: #e4405f; }
+.footer-uz-social.yt { background: #ff0000; }
+.footer-uz-social:hover {
+    background: #fff;
+    color: #ff4b4b;
+}
+.footer-uz-bottom {
+    text-align: center;
+    color: #b2b6c8;
+    background: #181a20;
+    border-top: 1px solid #23243a;
+    padding: 12px 0 18px 0;
+    font-size: 1rem;
+    letter-spacing: 0.01em;
+}
+@media (max-width: 900px) {
+    .footer-uz-wrap {
+        flex-direction: column;
+        gap: 0;
+        padding: 30px 10px 5px 10px;
+    }
+    .footer-uz-logo-block, .footer-uz-links, .footer-uz-socials {
+        margin-bottom: 18px;
+    }
+}
+/* Footer styles */
+.footer {
+    background: #181818;
+    color: #fff;
+    padding: 40px 0 0 0;
+    font-size: 15px;
+    margin-top: 40px;
+}
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.footer-section {
+    flex: 1 1 220px;
+    margin: 0 20px 30px 0;
+    min-width: 200px;
+}
+.footer-section h3 {
+    color: #ffa726;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+.footer-section h4 {
+    color: #ffa726;
+    margin: 15px 0 8px 0;
+    font-size: 16px;
+}
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.footer-section ul li {
+    margin-bottom: 6px;
+}
+.footer-section a {
+    color: #ffa726;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.footer-section a:hover {
+    color: #fff;
+}
+.footer-social a {
+    display: inline-block;
+    margin-right: 10px;
+}
+.footer-social img {
+    width: 28px;
+    height: 28px;
+    filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(10deg);
+    transition: filter 0.2s;
+}
+.footer-social a:hover img {
+    filter: brightness(1) invert(0) sepia(1) saturate(5) hue-rotate(10deg);
+}
+.footer-payments img {
+    height: 28px;
+    margin: 5px 8px 5px 0;
+    vertical-align: middle;
+    background: #fff;
+    border-radius: 5px;
+    padding: 2px 6px;
+}
+.footer-apps {
+    margin-top: 10px;
+}
+.footer-apps .app-icon {
+    height: 38px;
+    margin-right: 10px;
+    background: #fff;
+    border-radius: 7px;
+    padding: 2px 8px;
+}
+.footer-legal {
+    font-size: 13px;
+    color: #ccc;
+    margin: 10px 0 0 0;
+}
+.footer-copyright {
+    font-size: 13px;
+    color: #ffa726;
+    margin: 10px 0 0 0;
+}
+.footer-bottom {
+    text-align: right;
+    color: #fff;
+    background: #181818;
+    border-top: 1px solid #222;
+    padding: 10px 30px 15px 0;
+    font-size: 15px;
+}
+@media (max-width: 900px) {
+    .footer-container {
+        flex-direction: column;
+        padding: 0 10px;
+    }
+    .footer-section {
+        margin: 0 0 25px 0;
+    }
+    .footer-bottom {
+        text-align: center;
+        padding: 10px 0 15px 0;
+    }
+}
+/* Banner carousel controls */
+.amedia-banner-controls {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin: 0 0 12px 0;
+    z-index: 10;
+    position: relative;
+}
+.amedia-banner-controls button {
+    background: #232733;
+    color: #ffb347;
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    font-size: 1.7rem;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    transition: background 0.18s, color 0.18s;
+}
+.amedia-banner-controls button:hover {
+    background: #ffb347;
+    color: #232733;
+}
+/* --- AmediaTV Banner Styles --- */
+.amedia-banner {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 32px auto;
+    min-height: 380px;
+    display: flex;
+    align-items: stretch;
+    background: #181c24;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+}
+.amedia-banner-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    overflow: hidden;
+}
+.amedia-banner-bgimg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.55) blur(1.5px);
+    position: absolute;
+    inset: 0;
+}
+.amedia-banner-content {
+    position: relative;
+    z-index: 2;
+    flex: 1 1 0;
+    padding: 48px 36px 36px 48px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+}
+.amedia-banner-labels {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 10px;
+    font-size: 1.08rem;
+    font-weight: 600;
+    color: #ffb347;
+}
+.amedia-banner-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 18px;
+    color: #ffb347;
+    letter-spacing: 1.2px;
+    text-shadow: 0 2px 8px rgba(255,214,0,0.08);
+}
+.amedia-banner-desc {
+    font-size: 1.15rem;
+    color: #fff;
+    margin-bottom: 22px;
+    max-width: 600px;
+    text-shadow: 0 2px 8px #000a;
+}
+.amedia-banner-meta {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    margin-bottom: 0;
+}
+.amedia-banner-year {
+    background: #232733;
+    color: #ffb347;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 8px;
+    font-size: 1.08rem;
+}
+.amedia-banner-quality {
+    background: #232733;
+    color: #fff;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 8px;
+    font-size: 1.08rem;
+}
+.amedia-banner-quality b {
+    color: #ffb347;
+    font-weight: 800;
+}
+.amedia-banner-btn {
+    background: linear-gradient(90deg,#ffb347 60%,#ff5e62 100%);
+    color: #232733;
+    font-weight: 700;
+    padding: 8px 28px;
+    border-radius: 8px;
+    font-size: 1.08rem;
+    text-decoration: none;
+    margin-left: 8px;
+    transition: background 0.18s, color 0.18s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+.amedia-banner-btn:hover {
+    background: linear-gradient(90deg,#ff5e62 60%,#ffb347 100%);
+    color: #fff;
+}
+.amedia-banner-poster {
+    position: relative;
+    z-index: 2;
+    flex: 0 0 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 36px 36px 36px 0;
+}
+.amedia-banner-poster img {
+    width: 260px;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    background: #fff;
+}
+@media (max-width: 900px) {
+    .amedia-banner {
+        flex-direction: column;
+        min-height: 0;
+    }
+    .amedia-banner-content {
+        padding: 32px 18px 18px 18px;
+    }
+    .amedia-banner-poster {
+        padding: 0 0 24px 0;
+        justify-content: center;
+    }
+    .amedia-banner-poster img {
+        width: 180px;
+        height: 240px;
+    }
+}
+@media (max-width: 600px) {
+    .amedia-banner {
+        border-radius: 0;
+        margin: 0 0 18px 0;
+    }
+    .amedia-banner-content {
+        padding: 18px 8px 8px 8px;
+    }
+    .amedia-banner-title {
+        font-size: 1.3rem;
+    }
+    .amedia-banner-desc {
+        font-size: 0.98rem;
+    }
+    .amedia-banner-poster {
+        display: none !important;
+    }
+}
+/* --- END AmediaTV Banner Styles --- */
+/* Loader Overlay Styles */
+#loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(24,26,32,0.92);
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: opacity 0.3s;
+}
+.loader-spinner {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+.loader-spinner .dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #7fff7f 60%, #00c3ff 100%);
+    animation: loader-bounce 1.2s infinite cubic-bezier(.4,0,.2,1);
+}
+.loader-spinner .dot:nth-child(2) {
+    animation-delay: 0.2s;
+    background: linear-gradient(135deg, #00c3ff 60%, #7fff7f 100%);
+}
+.loader-spinner .dot:nth-child(3) {
+    animation-delay: 0.4s;
+    background: linear-gradient(135deg, #ffb347 60%, #00c3ff 100%);
+}
+.loader-spinner .dot:nth-child(4) {
+    animation-delay: 0.6s;
+    background: linear-gradient(135deg, #ff5e62 60%, #00c3ff 100%);
+}
+@keyframes loader-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-22px); }
+}
+.loader-text {
+    color: #fff;
+    font-size: 1.25rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+    text-shadow: 0 2px 8px #000a;
+}
+/* Force nav to show on desktop/PC */
+@media (min-width: 601px) {
+    nav.nav {
+        display: flex !important;
+        position: static !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        background: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        height: auto !important;
+        width: auto !important;
+        z-index: 1000;
+        margin-left: 32px;
+    }
+    .nav ul {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 32px !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        width: auto !important;
+        padding: 0 !important;
+    }
+    .nav li {
+        width: auto !important;
+        padding: 0 !important;
+    }
+    .nav a {
+        display: block !important;
+        width: auto !important;
+        border-bottom: 2px solid transparent;
+        font-size: 1.08rem;
+        padding: 6px 0;
+    }
+    .anime-grid {
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 18px !important;
+        padding: 18px !important;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .anime-card {
+        min-width: unset !important;
+        max-width: unset !important;
+        width: 100% !important;
+        padding: 8px 6px 12px 6px !important;
+        margin: 0 !important;
+        border-radius: 13px !important;
+        min-height: unset !important;
+        box-shadow: 0 2px 12px rgba(60,80,120,0.10);
+    }
+    .anime-card img {
+        height: 140px !important;
+        border-radius: 13px 13px 0 0 !important;
+        object-fit: cover;
+    }
+    .anime-title {
+        font-size: 1.05rem !important;
+        margin-bottom: 4px !important;
+    }
+    .anime-genres {
+        font-size: 0.93rem !important;
+        gap: 3px !important;
+        margin-bottom: 2px !important;
+    }
+    .anime-year {
+        font-size: 0.89rem !important;
+        margin-bottom: 2px !important;
+    }
+    .batafsil-btn, #watch-btn.batafsil-btn, #back-btn.batafsil-btn, #save-btn.batafsil-btn {
+        font-size: 0.98rem !important;
+        padding: 8px 0 !important;
+        border-radius: 8px !important;
+        margin-bottom: 4px !important;
+    }
+    .anime-desc {
+        font-size: 0.97rem !important;
+        margin-bottom: 4px !important;
+    }
+    .like-btn {
+        font-size: 1.08rem !important;
+        margin-top: 2px !important;
+    }
+    .like-count {
+        font-size: 0.92rem !important;
+    }
+}
+/* Mobil burger menyu va kichik kartochkalar uchun */
+@media (max-width: 600px) {
+    .header {
+        flex-direction: row;
+        height: auto;
+        padding: 0 10px;
+        gap: 0;
+        position: relative;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .logo {
+        font-size: 1.3rem;
+        margin: 8px 0 0 0;
+        flex: 0 0 auto;
+    }
+    .burger {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 2.1rem;
+        color: var(--primary);
+        margin: 0 0 0 auto;
+        cursor: pointer;
+        z-index: 1001;
+        position: absolute;
+        right: 12px;
+        top: 16px;
+    }
+        /* 2 ta kartochka har qatorga */
+        .anime-grid {
+            display: grid !important;
+            grid-template-columns: repeat(2, 1fr);
+                display: none; /* Mobile hides nav by default */
+                flex-direction: column; /* Removed stray display:flex from mobile block */
+                align-items: flex-start;
+                padding: 12px 0 8px 0;
+                z-index: 1000;
+        }
+        .anime-card {
+            width: 100%;
+            min-width: unset;
+            max-width: unset;
+            padding: 8px 2vw 10px 2vw;
+            margin: 10px 0;
+            border-radius: 12px;
+        }
+        .anime-card img {
+            height: 90px;
+            border-radius: 12px 12px 0 0;
+        }
+    }
+    .nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--bg-light);
+        box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 12px 0 8px 0;
+        z-index: 1000;
+    }
+    .nav.open {
+        display: flex !important;
+    }
+    .nav ul {
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+        padding: 0;
+    }
+    .nav li {
+        width: 100%;
+        padding: 0;
+    }
+    .nav a {
+        display: block;
+        width: 100%;
+        padding: 12px 18px;
+        font-size: 1.08rem;
+        border-bottom: 1px solid #232733;
+    }
+    .anime-card {
+        min-width: 0;
+        max-width: 96vw;
+        padding: 8px 2vw 10px 2vw;
+        margin: 10px auto;
+        border-radius: 12px;
+    }
+    .anime-card img {
+        height: 90px;
+        border-radius: 12px 12px 0 0;
+    }
+/* The above properties are outside of any selector, which is invalid. Remove them. */
+@media (max-width: 400px) {
+    .anime-card {
+        max-width: 99vw;
+        padding: 4px 1vw 8px 1vw;
+    }
+    .anime-card img {
+        height: 60px;
+    }
+}
+/* Mobil (telefon) uchun moslashuvchan dizayn */
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        height: auto;
+        padding: 0 10px;
+        gap: 8px;
+    }
+    .logo {
+        font-size: 1.5rem;
+        margin: 8px 0 0 0;
+    }
+    .nav ul {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 0.98rem;
+    }
+    .hero {
+        padding: 24px 0 18px 0;
+    }
+    .hero h1 {
+        font-size: 1.25rem;
+        margin-bottom: 14px;
+    }
+    .search-filters {
+        flex-direction: column;
+        gap: 8px;
+        align-items: stretch;
+    }
+    input[type="text"], select {
+        width: 100%;
+        min-width: 0;
+        font-size: 1rem;
+        padding: 10px 10px;
+    }
+    .carousel {
+        max-width: 100vw;
+        border-radius: 0;
+        margin: 0 0 18px 0;
+    }
+    .carousel-item {
+        min-width: 90vw;
+        max-width: 90vw;
+        margin: 8px 0;
+    }
+    .carousel-item img {
+        height: 120px;
+    }
+    .anime-card {
+        min-width: 0;
+        max-width: 98vw;
+        padding: 12px 6px 12px 6px;
+        margin: 12px auto;
+        border-radius: 14px;
+    }
+    .anime-card img {
+        height: 120px;
+        border-radius: 14px 14px 0 0;
+    }
+    .anime-title {
+        font-size: 1.05rem;
+    }
+    .anime-genres {
+        font-size: 0.95rem;
+        gap: 4px;
+    }
+    .anime-desc {
+        font-size: 0.97rem;
+        margin-bottom: 10px;
+    }
+    .batafsil-btn, #watch-btn.batafsil-btn, #back-btn.batafsil-btn, #save-btn.batafsil-btn {
+        font-size: 1rem;
+        padding: 10px 0;
+        border-radius: 10px;
+        margin-bottom: 6px;
+    }
+    .footer {
+        font-size: 0.95rem;
+        padding: 16px 0 10px 0;
+        margin-top: 18px;
+    }
+    .modal-content {
+        min-width: 90vw;
+        max-width: 98vw;
+        padding: 16px 4px;
+        border-radius: 12px;
+    }
+    #saved-list li {
+        font-size: 0.98rem;
+        padding: 7px 6px;
+        border-radius: 8px;
+    }
+}
+/* Saqlangan animelar modalidagi ro'yxat dizayni */
+#saved-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: var(--btn-watch);
+    color: #fff;
+    font-weight: 700;
+    border-radius: 14px;
+    font-size: 1.09rem;
+    border: none;
+    box-shadow: 0 2px 12px rgba(79,140,255,0.08);
+    margin-bottom: 7px;
+}
+#saved-list li {
+    background: var(--card-bg);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: background 0.18s;
+}
+#saved-list li:hover {
+    background: var(--btn-hover);
+}
+#saved-list .batafsil-btn {
+    background: var(--btn-watch);
+    color: #fff;
+    border-radius: 7px;
+    font-size: 0.98rem;
+    padding: 5px 16px;
+    margin-right: 6px;
+    border: none;
+    transition: background 0.18s;
+}
+#saved-list .batafsil-btn:hover {
+    background: var(--btn-watch-hover);
+}
+#saved-list button {
+    background: none;
+    color: var(--primary);
+    border: none;
+    font-size: 1.02rem;
+    cursor: pointer;
+    padding: 4px 10px;
+    border-radius: 6px;
+    transition: background 0.18s, color 0.18s;
+}
+#saved-list button:hover {
+    background: var(--primary);
+    color: #fff;
+}
+#saved-list span[style*="color:var(--accent)"] {
+    font-size: 1.07rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+/* Anime Uz - Professional Anime Streaming Platform (Uzbek) */
+:root {
+    --bg-dark: #181c24;
+    --bg-light: #232733;
+    --primary: #4f8cff;
+    --accent: #ffb347;
+    --text-main: #f3f4fa;
+    --text-muted: #b2b6c8;
+    --card-bg: linear-gradient(135deg, #232733 80%, #23242b 100%);
+    --shadow: 0 4px 24px rgba(0,0,0,0.13);
+    --radius: 16px;
+    --transition: 0.22s cubic-bezier(.4,0,.2,1);
+    --btn-bg: #232733;
+    --btn-hover: #3a5ccc;
+    --btn-active: #4f8cff;
+    --btn-accent: #ffb347;
+    --btn-watch: linear-gradient(90deg,#4f8cff 60%,#1e3c72 100%);
+    --btn-watch-hover: linear-gradient(90deg,#3a5ccc 60%,#27408b 100%);
+    --font-main: 'Segoe UI', 'Roboto', Arial, sans-serif;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: linear-gradient(120deg, #181c24 60%, #232733 100%);
+    color: var(--text-main);
+    font-family: var(--font-main);
+    min-height: 100vh;
+    line-height: 1.7;
+    letter-spacing: 0.01em;
+    font-size: 1.05rem;
+}
+.header {
+    position: sticky;
+    top: 0;
+    background: var(--bg-light);
+    box-shadow: var(--shadow);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 36px;
+    height: 64px;
+    border-bottom: 1px solid #23242b;
+}
+.logo {
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 2.5px;
+    text-shadow: 0 2px 8px rgba(255,76,152,0.08);
+}
+.nav ul {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+}
+.nav a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 1.08rem;
+    font-weight: 500;
+    padding: 6px 0;
+    border-bottom: 2px solid transparent;
+    transition: color var(--transition), border-bottom var(--transition);
+}
+.nav a:hover, .nav a:focus {
+    color: var(--primary);
+    border-bottom: 2px solid var(--primary);
+    outline: none;
+}
+.hero {
+    background: linear-gradient(90deg, var(--bg-light) 60%, #23242b 100%);
+    padding: 48px 0 32px 0;
+    text-align: center;
+    border-bottom: 1px solid #23242b;
+}
+.hero h1 {
+    font-size: 2.3rem;
+    margin-bottom: 24px;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-shadow: 0 2px 8px rgba(255,214,0,0.08);
+}
+.search-filters {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+input[type="text"], select {
+    width: 320px;
+    padding: 12px 16px;
+    border-radius: var(--radius);
+    border: none;
+    background: var(--card-bg);
+    color: var(--text-main);
+    font-size: 1.08rem;
+    box-shadow: var(--shadow);
+    transition: box-shadow var(--transition), border var(--transition);
+    outline: none;
+    border: 1.5px solid transparent;
+}
+input[type="text"]:focus, select:focus {
+    border: 1.5px solid var(--primary);
+    box-shadow: 0 0 0 2px var(--primary);
+}
+.carousel {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 32px auto;
+    overflow: hidden;
+    position: relative;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    background: var(--card-bg);
+}
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s;
+}
+.carousel-item {
+    min-width: 300px;
+    max-width: 300px;
+    margin: 16px;
+    background: var(--bg-light);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    position: relative;
+}
+.carousel-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: var(--radius) var(--radius) 0 0;
+}
+.carousel-item .carousel-info {
+    padding: 16px;
+}
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+.carousel-btn {
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    pointer-events: all;
+    transition: background var(--transition);
+}
+.carousel-btn:hover {
+    background: var(--accent);
+    color: var(--primary);
+}
+.anime-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 32px;
+    padding: 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.anime-card {
+    background: var(--card-bg);
+    border-radius: 22px;
+    box-shadow: 0 6px 32px rgba(60,80,120,0.13);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow var(--transition), transform var(--transition);
+    min-height: 420px;
+    position: relative;
+    border: 1.5px solid rgba(79,140,255,0.07);
+    padding: 24px 28px 22px 28px;
+    margin-top: 32px;
+}
+.anime-card:hover {
+    transform: translateY(-8px) scale(1.04);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.32);
+    z-index: 2;
+}
+.anime-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: var(--radius) var(--radius) 0 0;
+}
+.anime-card .anime-info {
+    padding: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.anime-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 7px;
+    letter-spacing: 0.04em;
+    text-shadow: 0 1px 4px rgba(255,224,102,0.06);
+}
+.anime-genres {
+    font-size: 1.01rem;
+    color: var(--primary);
+    margin-bottom: 3px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.anime-year {
+    font-size: 0.97rem;
+    color: var(--text-muted);
+    margin-bottom: 7px;
+    font-weight: 400;
+}
+.anime-desc {
+    font-size: 1.04rem;
+    color: var(--text-main);
+    margin-bottom: 18px;
+    display: none;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+}
+.batafsil-btn {
+    background: var(--btn-bg);
+    color: var(--text-main);
+    border: none;
+    border-radius: 14px;
+    padding: 13px 0;
+    font-size: 1.09rem;
+    cursor: pointer;
+    font-weight: 600;
+    width: 100%;
+    margin-bottom: 7px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    letter-spacing: 0.02em;
+    transition: background var(--transition), color var(--transition), box-shadow var(--transition), transform var(--transition);
+    outline: none;
+}
+.batafsil-btn:hover, .batafsil-btn:focus {
+    background: var(--btn-hover);
+    color: var(--accent);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    transform: translateY(-2px) scale(1.03);
+}
+/* Anime detail sahifasidagi tugmalar uchun maxsus ranglar */
+#watch-btn.batafsil-btn {
+    background: var(--btn-watch);
+    color: #fff;
+    margin-bottom: 7px;
+    border-radius: 14px;
+    font-size: 1.09rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    border: none;
+    box-shadow: 0 2px 12px rgba(79,140,255,0.08);
+}
+#watch-btn.batafsil-btn::before {
+    display: none;
+}
+#watch-btn.batafsil-btn:hover::before, #watch-btn.batafsil-btn:focus::before {
+    opacity: 1;
+}
+/* Removed stray closing brace above. The next selector is valid. */
+#watch-btn.batafsil-btn:hover, #watch-btn.batafsil-btn:focus {
+    background: var(--btn-watch-hover);
+    color: #fff;
+}
+#back-btn.batafsil-btn {
+    background: var(--btn-watch);
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 0;
+    border-radius: 14px;
+    font-size: 1.09rem;
+    border: none;
+    box-shadow: 0 2px 12px rgba(79,140,255,0.08);
+    width: 100%;
+}
+#back-btn.batafsil-btn:hover, #back-btn.batafsil-btn:focus {
+    background: var(--btn-watch-hover);
+    color: #fff;
+}
+/* Watch button special style */
+#watch-btn.batafsil-btn {
+    background: var(--btn-watch);
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    box-shadow: 0 2px 12px rgba(0,136,204,0.10);
+    transition: background var(--transition), color var(--transition), box-shadow var(--transition), transform var(--transition);
+    background: var(--btn-watch);
+    color: #fff;
+    font-weight: 700;
+    border-radius: 14px;
+    font-size: 1.09rem;
+    border: none;
+    box-shadow: 0 2px 12px rgba(79,140,255,0.08);
+    margin-bottom: 7px;
+}
+#save-btn.batafsil-btn:hover, #save-btn.batafsil-btn:focus {
+    background: var(--btn-watch-hover);
+    color: #fff;
+}
+#watch-btn.batafsil-btn:hover, #watch-btn.batafsil-btn:focus {
+    background: var(--btn-watch-hover);
+    color: #fff;
+    box-shadow: 0 4px 20px rgba(0,136,204,0.18);
+}
+.empty-state {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 1.3rem;
+    margin: 32px 0;
+}
+    .burger {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 2.1rem;
+        color: var(--primary);
+        margin: 0 0 0 auto;
+        cursor: pointer;
+        z-index: 1001;
+        position: absolute;
+        right: 12px;
+        top: 16px;
+    }
+    .nav {
+        display: none;
+    }
+    .nav.open {
+        display: flex !important;
+    }
+/* Removed stray closing brace above. The next media query is valid. */
+@media (min-width: 601px) {
+    .nav {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        align-items: center;
+        background: none;
+        box-shadow: none;
+        padding: 0;
+    }
+}
+
+/* The following block had properties outside a selector. Let's wrap them in a selector or remove if duplicate. */
+/* If this was meant for a modal overlay, use a class or id. Example: */
+#modal-overlay {
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(24,26,32,0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+.modal-content {
+    background: var(--card-bg);
+    padding: 32px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    min-width: 320px;
+    max-width: 400px;
+    color: var(--text-main);
+    position: relative;
+}
+.close-modal {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 2.3rem;
+    margin-bottom: 24px;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-shadow: 0 2px 8px rgba(255,224,102,0.06);
+    padding: 0;
+    margin-top: 16px;
+}
+#saved-list li {
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    color: var(--accent);
+}
+
+/* Like button styles */
+    .anime-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 7px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 1vw;
+        box-sizing: border-box;
+    }
+    .anime-card {
+        width: 100%;
+        min-width: unset;
+        max-width: unset;
+        padding: 4px 1vw 6px 1vw;
+        margin: 6px 0;
+        border-radius: 10px;
+        min-height: unset;
+    }
+    .anime-card img {
+        height: 60px;
+        border-radius: 10px 10px 0 0;
+    }
+    .anime-title {
+        font-size: 0.98rem;
+        margin-bottom: 3px;
+    }
+    .anime-genres {
+        font-size: 0.85rem;
+        gap: 2px;
+        margin-bottom: 2px;
+    }
+    .anime-year {
+        font-size: 0.82rem;
+        margin-bottom: 2px;
+    }
+    .batafsil-btn, #watch-btn.batafsil-btn, #back-btn.batafsil-btn, #save-btn.batafsil-btn {
+        font-size: 0.92rem;
+        padding: 7px 0;
+        border-radius: 7px;
+        margin-bottom: 3px;
+    }
+    .anime-desc {
+        font-size: 0.89rem;
+        margin-bottom: 4px;
+    }
+    .like-btn {
+        font-size: 1rem;
+        margin-top: 2px;
+    }
+    .like-count {
+        font-size: 0.85rem;
+}
+.anime-stat .stat-label {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    margin-left: 2px;
+}
+
+/* Search suggestions/autocomplete */
+#search-suggestions {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    z-index: 20;
+    background: var(--card-bg);
+    border-radius: 13px;
+    box-shadow: 0 4px 24px rgba(60,80,120,0.13);
+    margin-top: 2px;
+    max-height: 220px;
+    overflow-y: auto;
+    border: 1px solid var(--primary);
+    display: none;
+    min-width: 180px;
+    width: 100%;
+    padding: 2px 0;
+}
+.suggestion-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+    color: var(--text-main);
+    font-size: 0.97rem;
+    border-radius: 8px;
+    transition: background var(--transition), color var(--transition), box-shadow var(--transition);
+    min-height: 38px;
+}
+.suggestion-item.highlighted,
+.suggestion-item:hover {
+    background: var(--btn-hover);
+    color: var(--accent);
+    box-shadow: 0 2px 8px rgba(60,80,120,0.10);
+}
+.suggestion-thumb {
+    width: 32px;
+    height: 32px;
+    border-radius: 7px;
+    object-fit: cover;
+    background: #222;
+    flex-shrink: 0;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+}
+.suggestion-highlight {
+  color: var(--accent);
+  font-weight: bold;
+  background: none;
+}
+
+/* Notification modal */
+#notification-modal {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  background: var(--card-bg);
+  color: var(--accent);
+  padding: 18px 32px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  font-size: 1.1rem;
+  z-index: 99999;
+  display: none;
+  animation: fadeInOut 2.5s;
+}
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(-20px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-20px); }
+}
+
+/* Dark/Light mode toggle */
+.theme-toggle {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--card-bg);
+  color: var(--primary);
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  font-size: 1.5rem;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition), color var(--transition);
+}
+.theme-toggle:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* Responsive for new elements */
+@media (max-width: 600px) {
+  #notification-modal {
+    right: 8px;
+    left: 8px;
+    padding: 12px 8px;
+    font-size: 1rem;
+  }
+  .theme-toggle {
+    bottom: 12px;
+    right: 12px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+}
+
+/* Saqlangan animelar modalini ekranning o'rtasiga chiqarish */
+#saved-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(24,26,32,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+}

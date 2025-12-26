@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Batafsil</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo" data-i18n="logo">Anime Uz</div>
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html" data-i18n="nav-home">Bosh sahifa</a></li>
+                <li><a href="#animelar" data-i18n="nav-anime">Animelar</a></li>
+                <li><a href="#janrlar" data-i18n="nav-genres">Janrlar</a></li>
+                <li><a href="#yillar" data-i18n="nav-years">Yillar</a></li>
+                <li><a href="#saqlanganlar" id="saved-link" data-i18n="nav-saved">Saqlanganlar</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="anime-detail" id="anime-detail">
+            <!-- Anime detail and three buttons (Saqlab qo‘yish, Orqaga qaytish, Tomosha qilish) will be rendered by script.js -->
+        </section>
+        <style>
+        /* kawaii.uz uslubi: katta cover, statistik blok, janrlar, status, tavsif */
+        .anime-cover {
+            display: block;
+            width: 100%;
+            max-width: 900px;
+            min-height: 220px;
+            max-height: 340px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 0 0 32px 32px;
+            margin: 0 auto -40px auto;
+            z-index: 1;
+            position: relative;
+            box-shadow: 0 2px 16px rgba(60,80,120,0.13);
+        }
+        .anime-main-info {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(36,38,48,0.97);
+            border-radius: 24px;
+            box-shadow: 0 2px 16px rgba(60,80,120,0.13);
+            padding: 32px 32px 18px 32px;
+            position: relative;
+            top: 0;
+        }
+        .anime-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary, #a78bfa);
+            margin-bottom: 18px;
+            text-align: center;
+        }
+        .anime-stats {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            margin-bottom: 18px;
+        }
+        .anime-stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #fff;
+            font-size: 1.1rem;
+        }
+        .anime-stat .stat-label {
+            font-size: 0.98rem;
+            color: #b2b6c8;
+        }
+        .anime-genres {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 10px;
+            justify-content: center;
+        }
+        .anime-genre {
+            background: #232733;
+            color: #a78bfa;
+            border-radius: 16px;
+            padding: 4px 16px;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        .anime-status {
+            text-align: center;
+            margin-bottom: 18px;
+            color: #7fff7f;
+            font-weight: 600;
+        }
+        .anime-btns {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin: 18px 0 0 0;
+        }
+        .batafsil-btn, #watch-btn.batafsil-btn, #back-btn.batafsil-btn, #save-btn.batafsil-btn {
+            font-size: 1.08rem;
+            padding: 12px 32px;
+            border-radius: 10px;
+            font-weight: 600;
+            background: #a78bfa;
+            color: #fff;
+            border: none;
+            outline: none;
+            box-shadow: none;
+            transition: background 0.2s, color 0.2s;
+        }
+        #watch-btn { background: linear-gradient(90deg,#a78bfa 60%,#6d28d9 100%); color: #fff; }
+        #save-btn[disabled] { background: #44495a; color: #b2b6c8; }
+        #back-btn { background: #232733; color: #fff; }
+        .anime-rating-panel {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+            margin: 32px auto 0 auto;
+            max-width: 900px;
+        }
+        .anime-rating-score {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #fff;
+            margin-right: 12px;
+        }
+        .anime-rating-stars {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .anime-rating-star {
+            font-size: 2rem;
+            color: #a78bfa;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .anime-rating-star.filled {
+            color: #ffd700;
+        }
+        .anime-desc-block {
+            max-width: 900px;
+            margin: 32px auto 0 auto;
+            background: rgba(36,38,48,0.97);
+            border-radius: 18px;
+            box-shadow: 0 2px 16px rgba(60,80,120,0.13);
+            padding: 24px 32px 24px 32px;
+        }
+        .anime-desc-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #a78bfa;
+            margin-bottom: 12px;
+            text-align: left;
+        }
+        .anime-desc-short {
+            font-size: 1.13rem;
+            color: var(--text-main, #f5f6fa);
+            line-height: 1.7;
+            text-align: left;
+        }
+        .anime-desc-full {
+            font-size: 1.13rem;
+            color: var(--text-main, #f5f6fa);
+            line-height: 1.7;
+            text-align: left;
+            margin-top: 10px;
+        }
+        .desc-more-btn {
+            margin-top: 10px;
+            background: #a78bfa;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 6px 18px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .desc-more-btn:hover {
+            background: #6d28d9;
+        }
+        @media (max-width: 900px) {
+            .anime-main-info { padding: 18px 8px 8px 8px; }
+            .anime-title { font-size: 1.3rem; }
+            .anime-desc { font-size: 1.01rem; padding: 0 0 18px 0; }
+        }
+        @media (max-width: 600px) {
+            .anime-main-info { padding: 10px 2vw 8px 2vw; border-radius: 10px; }
+            .anime-title { font-size: 1.08rem; }
+            .batafsil-btn { font-size: 1rem; padding: 10px 0; }
+            .anime-desc { font-size: 0.98rem; padding: 0 0 10px 0; border-radius: 0 0 10px 10px; }
+        }
+        </style>
+    </main>
+    <footer class="footer">
+        <div>&copy; 2025 Anime Uz. Barcha huquqlar himoyalangan.</div>
+        <div>Kontakt: info@animeuz.uz</div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

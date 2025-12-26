@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Uz - Eng yaxshi animelar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <div id="lang-warning-modal" style="display:none;position:fixed;z-index:9999;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.45);align-items:center;justify-content:center;">
+            <div style="background:#23243a;color:#fff;padding:32px 24px 24px 24px;border-radius:14px;max-width:90vw;width:400px;box-shadow:0 8px 32px #0007;position:relative;text-align:center;">
+                <div style="font-size:1.25rem;font-weight:600;margin-bottom:12px;">Внимание!</div>
+                <div id="lang-warning-text" style="margin-bottom:18px;">В данный момент названия аниме и их описания доступны только на узбекском языке. Мы работаем над добавлением русского языка. Спасибо за понимание!</div>
+                <button id="close-lang-warning" style="background:#ffb84b;color:#23243a;font-weight:600;padding:7px 22px;border:none;border-radius:6px;cursor:pointer;font-size:1.08rem;">Понятно</button>
+            </div>
+        </div>
+    <header class="header"> 
+        <div class="logo">Anime Uz</div>
+        <div class="lang-switcher" style="display:inline-block; margin-left:20px;">
+            <button id="lang-uz" class="lang-btn" aria-label="O'zbekcha">UZ</button>
+            <button id="lang-ru" class="lang-btn" aria-label="Русский">RU</button>
+        </div>
+        <button class="burger" id="burger-menu" aria-label="Menyuni ochish">&#9776;</button>
+        <nav class="nav" id="main-nav">
+            <ul>
+                <li><a href="index.html" data-i18n="nav-home">Bosh sahifa</a></li>
+                <li><a href="#" data-i18n="nav-anime" class="nav-anime-link">Animelar</a></li>
+                <li><a href="#" data-i18n="nav-genres" class="nav-genres-link">Janrlar</a></li>
+                <li><a href="#" data-i18n="nav-years" class="nav-years-link">Yillar</a></li>
+                <li><a href="#saqlanganlar" id="saved-link" data-i18n="nav-saved">Saqlanganlar</a></li>
+                <li><a href="anime-edits.html" id="anime-edit-link" data-i18n="nav-edits">Anime Editlar</a></li>
+            </ul>
+        </nav>
+        <style>
+        @media (max-width: 700px) {
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 12px 8px;
+            }
+            .logo {
+                font-size: 1.3rem;
+            }
+            .nav {
+                position: absolute;
+                top: 56px;
+                left: 0;
+                width: 100vw;
+                background: #23243a;
+                box-shadow: 0 2px 12px #0002;
+                z-index: 999;
+                display: none;
+            }
+            .nav.open {
+                display: block;
+            }
+            .nav ul {
+                flex-direction: column;
+                gap: 0;
+            }
+            .nav ul li {
+                margin: 0;
+                border-bottom: 1px solid #23243a;
+                padding: 12px 18px;
+            }
+            .burger {
+                display: block !important;
+                background: none;
+                border: none;
+                font-size: 2rem;
+                color: #ffb84b;
+                margin-left: auto;
+                cursor: pointer;
+            }
+        }
+        </style>
+    </header>
+    <section class="hero">
+        <div id="amedia-banner-carousel"></div>
+        <div class="amedia-banner-controls">
+            <button id="amedia-banner-prev" aria-label="Oldingi banner">&#8592;</button>
+            <button id="amedia-banner-next" aria-label="Keyingi banner">&#8594;</button>
+        </div>
+        <!-- ...existing code... -->
+        <div class="search-filters" style="position:relative;">
+            <input type="text" id="search-input" data-i18n-placeholder="search-placeholder" placeholder="Anime nomini qidirish…" autocomplete="off">
+            <div id="search-suggestions"></div>
+            <select id="genre-filter">
+                <option value="" data-i18n="filter-genre">Janrni tanlang</option>
+            </select>
+            <select id="year-filter">
+                <option value="" data-i18n="filter-year">Yilni tanlang</option>
+            </select>
+        </div>
+    </section>
+    <section class="carousel" id="featured-carousel">
+        <!-- Featured anime carousel will be rendered here -->
+    </section>
+    <main>
+        <div id="recently-viewed" style="display:none;margin-bottom:32px;"></div>
+        <div class="anime-grid" id="anime-grid">
+            <!-- Anime cards will be rendered here -->
+        </div>
+        <style>
+                @media (max-width: 600px) {
+                    .rv-list {
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        max-width: 100vw;
+                        row-gap: 10px;
+                    }
+                    .rv-item {
+                        margin-bottom: 0;
+                        margin-right: 0;
+                        width: 42vw;
+                        min-width: 110px;
+                        max-width: 44vw;
+                        height: 130px;
+                        min-height: 130px;
+                        max-height: 130px;
+                    }
+                    .rv-item img {
+                        width: 60px;
+                        height: 80px;
+                    }
+                    .rv-item span {
+                        max-width: 90px;
+                    }
+                }
+        #recently-viewed {
+            background: #23243a;
+            border-radius: 14px;
+            padding: 18px 18px 10px 18px;
+            margin: 0 auto 32px auto;
+            max-width: 1200px;
+            box-shadow: 0 2px 12px #0002;
+        }
+        .rv-title {
+            color: #ffb84b;
+            font-size: 1.18rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .rv-list {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .rv-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #fff;
+            background: #181a20;
+            border-radius: 10px;
+            padding: 8px 10px 6px 10px;
+            width: 90px;
+            min-width: 90px;
+            max-width: 90px;
+            height: 130px;
+            min-height: 130px;
+            max-height: 130px;
+            transition: box-shadow 0.2s, background 0.2s;
+            box-shadow: 0 1px 6px #0001;
+        }
+        .rv-item img {
+            width: 60px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 6px;
+            background: #fff;
+        }
+        .rv-item span {
+            font-size: 0.98rem;
+            text-align: center;
+            color: #ffb84b;
+            margin-top: 2px;
+            word-break: break-word;
+            width: 100%;
+            max-width: 80px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            display: block;
+        }
+        .rv-item:hover {
+            background: #2d2e3a;
+            box-shadow: 0 2px 12px #0003;
+        }
+        </style>
+        <div class="empty-state" id="empty-state" style="display:none;" data-i18n="empty-state">Hech qanday anime topilmadi</div>
+    </main>
+    <div id="notification-modal"></div>
+    <button class="theme-toggle" id="theme-toggle" title="Tungi/Kunduz rejim">🌙</button>
+    <!-- ...footer yangi versiyasi pastda joylashgan... -->
+    <div id="saved-modal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close-modal" id="close-modal">&times;</span>
+            <h2 data-i18n="saved-title">Saqlangan animelar</h2>
+            <ul id="saved-list"></ul>
+        </div>
+    </div>
+        <script src="script.js"></script>
+</body>
+
+<footer class="footer anime-footer-uz">
+    <div class="footer-uz-wrap sorted">
+        <div class="footer-uz-col">
+            <div class="footer-uz-logo">🎬 <span>Anime Uz</span></div>
+            <div class="footer-uz-desc" data-i18n="footer-desc">
+                Biz anime ixlosmandlari uchun sifatli va qulay tomosha platformasini taqdim etamiz.<br>
+                Saytimizdagi animelarning bir qismi jamoamiz tomonidan dublyaj qilingan, qolgan kontent esa boshqa professional studiyalardan olingan.<br>
+                <span class="footer-uz-slogan" data-i18n="footer-slogan">“Anime — yurakdan yurakka!”</span>
+            </div>
+        </div>
+        <div class="footer-uz-col">
+            <h4 data-i18n="footer-sections">Sayt bo‘limlari</h4>
+            <ul class="footer-uz-list">
+                <li><a href="#" data-i18n="footer-link-home" class="footer-anime-link">Bosh sahifa</a></li>
+                <li><a href="#" data-i18n="footer-link-anime" class="footer-anime-link">Animelar</a></li>
+                <li><a href="#" data-i18n="footer-link-genres" class="footer-genres-link">Janrlar</a></li>
+                <li><a href="#" data-i18n="footer-link-years" class="footer-years-link">Yillar</a></li>
+            </ul>
+        </div>
+        <div class="footer-uz-col">
+            <h4 data-i18n="footer-contact">Biz bilan aloqa</h4>
+            <ul class="footer-uz-list">
+                <li><span data-i18n="footer-link-telegram">Telegram:</span> <a href="https://t.me/user_shoyo" target="_blank" data-i18n="footer-link-email">@user_shoyo</a></li>
+                <li><span data-i18n="footer-link-tel">Tel:</span> <a href="tel:+9980000000000" data-i18n="footer-link-phone">+998 00 00 00 00</a></li>
+            </ul>
+            <h4 data-i18n="footer-partners">Hamkorlar</h4>
+            <ul class="footer-uz-list">
+                <li><a href="https://uzanime.uz" target="_blank" data-i18n="footer-link-uzanime">UzAnime</a></li>
+                <li><a href="https://aniplus.uz" target="_blank" data-i18n="footer-link-aniplus">AniPlus</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-uz-socials amedia-style center-social">
+        <h4 data-i18n="footer-socials">Biz ijtimoiy tarmoqlarda</h4>
+        <div class="footer-social">
+            <a href="#" title="Telegram"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/telegram.svg" alt="Telegram" /></a>
+            <a href="#" title="Instagram"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" /></a>
+            <a href="#" title="YouTube"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube" /></a>
+        </div>
+    </div>
+    <div class="footer-uz-bottom">
+        <span data-i18n="footer-copyright">&copy; 2025 Anime Uz. Barcha huquqlar himoyalangan. | Made with <span style="color:#ff4b4b">❤</span> in Uzbekistan</span>
+    </div>
+</footer>
+</html>
